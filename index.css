@@ -1,0 +1,158 @@
+/* Estimated sizes
+mobile window width:375px
+Desktop box width:448px; */
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/* Josh's Custom CSS Reset
+https://www.joshwcomeau.com/css/custom-css-reset/ */
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+  font-weight: inherit;
+  background-color: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Custom attribute */
+:root{
+  /* Colours */
+  --Colour-mainButton:hsl(245, 75%, 52%); 
+  --Colour-lowerBackground:hsl(225, 100%, 94%);
+  --Colour-cardColour:hsl(225, 100%, 98%);  
+  --Colour-standardText:hsl(224, 23%, 55%);  
+  --Colour-mainText:hsl(223, 47%, 23%);
+  /* --neutral4:*/ 
+
+  /* Fonts */
+  --defaultFontSize:1rem;
+  /* --smallFontSize:calc(var(--defaultFontSize)/1.40625); font-size:0.8rem; */
+  --fontDefault:'Red Hat Display', sans-serif;
+  --fontweight-large:900;
+  --fontweight-medium:700;
+  --fontweight-small:500;
+
+  /* Padding & Margin */
+  --defaultMarginPadding:1rem;
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+
+  font-family: var(--fontDefault);
+  font-size:var(--defaultFontSize); 
+  background-color: var(--Colour-lowerBackground);
+  font-weight: var(--fontweight-small);
+  color:var(--Colour-standardText);
+  background-image: url(./images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-size:contain;
+}
+main{
+    height:calc(100vh - 1.031rem);
+    display:grid;
+    place-items: center;
+}
+.product {
+    background-color: var(--Colour-cardColour);
+    margin:0 calc(var(--defaultMarginPadding)*1.5);
+    border-radius: 1rem;
+    overflow: auto;
+    max-width: 28rem;
+    text-align: center;
+    box-shadow: 0rem calc(var(--defaultMarginPadding)*1) 1rem hsl(225, 100%, 90%);
+}
+.product__container {
+    margin:calc(var(--defaultMarginPadding)*1.5) var(--defaultMarginPadding);
+    display:flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap:calc(var(--defaultMarginPadding)*1.3);
+}
+h1 {
+    font-weight: var(--fontweight-large);
+    color: var(--Colour-mainText);
+}
+.product__container p {
+    text-wrap:balance;
+}
+.product__cost-container {
+    background-color: hsl(225, 100%, 94%,0.2);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* width:100%; */
+    padding:var(--defaultMarginPadding);
+}
+.product__cost-container a {
+    font-weight: var(--fontweight-large);
+    font-size: calc(var(--defaultFontSize)*0.75);
+}
+
+h2 {
+    font-weight: var(--fontweight-large);
+    color:var(--Colour-mainText);
+    font-size: medium;
+}
+.product__innerCost-container {
+    display:grid;
+    align-items: center;    
+    grid-template-columns:max-content 1fr;  
+} 
+.product__innerCost-container img {
+    /* grid-column-start: 1; */
+    grid-row: span 2;
+    margin-right: 1rem;
+}
+
+.payment-button {
+    background-color: var(--Colour-mainButton);
+    /* width:100%; */
+    border-radius: 0.5rem;
+    /* border:none; */
+    color:var(--Colour-cardColour);
+    font-weight: var(--fontweight-medium);
+    padding: calc(var(--defaultMarginPadding)*0.75);
+    border:solid black 1px;
+    box-shadow: 0rem var(--defaultMarginPadding) 0.4rem var(--Colour-lowerBackground);
+}
+.cancel-button {
+    width: fit-content;
+    align-self: center;
+    font-weight: var(--fontweight-large);
+    border: none;
+}
+
+@media (width < 400px) {
+    body{background-image: url(./images/pattern-background-mobile.svg);}
+}
+
+button:hover,.product__cost-container a:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.cancel-button:hover {
+    color:var(--Colour-mainText);
+    opacity: 1;
+}
+
