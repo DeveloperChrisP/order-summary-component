@@ -134,6 +134,7 @@ h2 {
     padding: calc(var(--defaultMarginPadding)*0.75);
     border:solid black 1px;
     box-shadow: 0rem var(--defaultMarginPadding) 0.4rem var(--Colour-lowerBackground);
+    text-decoration: none;
 }
 .cancel-button {
     width: fit-content;
@@ -165,7 +166,7 @@ h2 {
     }
   
 }
-button:hover,.product__cost-container a:hover {
+.payment-button:hover,.product__cost-container a:hover,button:hover {
     cursor: pointer;
     opacity: 0.5;
 }
