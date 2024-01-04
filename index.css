@@ -2,7 +2,7 @@
 mobile window width:375px
 Desktop box width:448px; */
 
-.attribution { font-size: 11px; text-align: center; }
+.attribution { font-size: 0.688rem; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 
 /* Josh's Custom CSS Reset
@@ -62,7 +62,7 @@ body {
   background-color: var(--Colour-lowerBackground);
   font-weight: var(--fontweight-small);
   color:var(--Colour-standardText);
-  background-image: url(./images/pattern-background-desktop.svg);
+  background-image: url(./images/pattern-background-mobile.svg);
   background-repeat: no-repeat;
   background-size:contain;
 }
@@ -142,10 +142,29 @@ h2 {
     border: none;
 }
 
-@media (width < 400px) {
-    body{background-image: url(./images/pattern-background-mobile.svg);}
+@media (width > 400px) {
+    body{background-image: url(./images/pattern-background-desktop.svg);}
+    .product__container {
+        margin:calc(var(--defaultMarginPadding)*3) calc(var(--defaultMarginPadding)*3);
+        gap:calc(var(--defaultMarginPadding)*1.2);
+    }
+    h1{
+        font-size: calc(var(--defaultFontSize)*2);
+    }
+    .product__container p {
+        font-size: calc(var(--defaultFontSize)*1.1);
+        
+    }
+    .product__cost-container {
+        
+        padding:calc(var(--defaultMarginPadding)*1.5);
+    
+    }
+    .cancel-button{
+        margin-top: 1rem;
+    }
+  
 }
-
 button:hover,.product__cost-container a:hover {
     cursor: pointer;
     opacity: 0.5;
